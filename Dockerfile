@@ -10,6 +10,7 @@ RUN apt-get update \
         curl \
         git \
         gh \
+        nano \
         sudo \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
