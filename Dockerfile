@@ -14,6 +14,9 @@ RUN apt-get update \
 # Create user with home dir and bash shell
 RUN useradd --uid 1000 -U -m -s /bin/bash $USER
 
+# Add the user to sudoers for passwordless sudo
+RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 # Default to the non-root user
 USER $USER
 WORKDIR /home/$USER
