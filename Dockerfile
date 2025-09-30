@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Update package list and install packages
 RUN apt-get update \
  && apt-get install -y \
+        curl \
         sudo \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
@@ -21,3 +22,12 @@ RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USER
 WORKDIR /home/$USER
 SHELL ["/bin/bash", "-l", "-c"]
+
+# Install Volta and Node.js + pnpm
+RUN curl https://get.volta.sh | bash
+
+ENV VOLTA_FEATURE_PNPM=1
+
+RUN volta install node \
+ && volta install npm \
+ && volta install pnpm
