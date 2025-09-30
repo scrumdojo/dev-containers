@@ -20,3 +20,4 @@ RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 # Default to the non-root user
 USER $USER
 WORKDIR /home/$USER
+SHELL ["/bin/bash", "-l", "-c"]
