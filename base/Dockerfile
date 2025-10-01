@@ -28,7 +28,7 @@ WORKDIR /home/$USER
 SHELL ["/bin/bash", "-l", "-c"]
 
 # Install Volta and Node.js + pnpm
-RUN curl https://get.volta.sh | bash
+RUN curl https://get.volta.sh | bash && rm -rf /tmp/*
 
 ENV VOLTA_FEATURE_PNPM=1
 
