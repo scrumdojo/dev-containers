@@ -19,9 +19,16 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Build Dev Environment
+      - name: Build Base Dev Environment
         uses: docker/build-push-action@v4
         with:
           context: ./base
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/dev-node:v1
+      
+      - name: Build Firebase Dev Environment
+        uses: docker/build-push-action@v4
+        with:
+          context: ./firebase
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/dev-firebase:v1
