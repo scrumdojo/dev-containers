@@ -62,3 +62,7 @@ RUN $OMP_INSTALL && \
 ARG OMP_THEME=/home/$USER/.oh-my-posh/oh_my_posh_theme.sh
 COPY --chown=$USER:$USER --chmod=755 sh/oh_my_posh_theme.sh $OMP_THEME
 RUN $OMP_THEME
+
+# Install AI CLI tools script
+ARG AICLI_INSTALL=/home/$USER/ai_cli_install.sh
+COPY --chown=$USER:$USER --chmod=755 sh/ai_cli_install.sh $AICLI_INSTALL
