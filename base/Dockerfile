@@ -13,7 +13,7 @@ RUN apt-get update \
         nano \
         sudo \
         unzip \
-        locales \   
+        locales \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -22,9 +22,9 @@ RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen \
  && locale-gen en_US.UTF-8 \
  && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
-ENV LANG=en_US.UTF-8  
-ENV LANGUAGE=en_US:en  
-ENV LC_ALL=en_US.UTF-8  
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
 
 # Create user with home dir and bash shell
 RUN useradd --uid 1000 -U -m -s /bin/bash $USER

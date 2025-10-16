@@ -12,4 +12,4 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 
 # Configure .bashrc
 mkdir -p "$OMP_DIR"
-echo "eval \"\$(oh-my-posh init bash --config $OMP_DIR/theme.omp.json)\"" >> "$BASHRC" 
+echo "eval \"\$(oh-my-posh init bash --config $OMP_DIR/theme.omp.json)\"" >> "$BASHRC"
