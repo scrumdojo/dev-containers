@@ -14,8 +14,14 @@ RUN apt-get update \
         sudo \
         unzip \
         locales \
+        zstd \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+# Install oh-my-posh
+ARG MSEDIT_INSTALL=/root/msedit_install.sh
+COPY --chmod=755 sh/msedit_install.sh $MSEDIT_INSTALL
+RUN $MSEDIT_INSTALL
 
 # Set the locale
 RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen \
