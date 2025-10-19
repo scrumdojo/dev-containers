@@ -11,6 +11,7 @@ RUN apt-get update \
         git \
         gh \
         nano \
+        openssh-server \
         sudo \
         unzip \
         locales \
@@ -18,6 +19,9 @@ RUN apt-get update \
         zstd \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+# Generate SSH host keys
+RUN ssh-keygen -A
 
 # Install MS Edit
 ARG MSEDIT_INSTALL=/root/msedit_install.sh
@@ -43,6 +47,11 @@ RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USER
 WORKDIR /home/$USER
 SHELL ["/bin/bash", "-l", "-c"]
+
+# Create .ssh directory
+RUN mkdir -p ~/.ssh \
+ && chmod 700 ~/.ssh \
+ && touch ~/.ssh/authorized_keys
 
 # Install Volta and Node.js + pnpm
 RUN curl https://get.volta.sh | bash && rm -rf /tmp/*

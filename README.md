@@ -10,6 +10,7 @@ Available at: `ghcr.io/scrumdojo/dev-base:v1`
 
 - Based on `debian:trixie`
 - User `dev:dev` (`1000:1000`) with `sudo`
+- OpenSSH Server
 - `git` and GitHub CLI (`gh`)
 - Editors `nano` and [MS Edit](https://github.com/microsoft/edit) (don't judge me)
 - [Node.js](https://nodejs.org) and [pnpm](https://pnpm.io) managed by [Volta](https://volta.sh)
