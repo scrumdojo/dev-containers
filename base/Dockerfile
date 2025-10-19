@@ -19,7 +19,7 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-# Install oh-my-posh
+# Install MS Edit
 ARG MSEDIT_INSTALL=/root/msedit_install.sh
 COPY --chmod=755 sh/msedit_install.sh $MSEDIT_INSTALL
 RUN $MSEDIT_INSTALL
