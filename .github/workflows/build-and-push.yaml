@@ -32,3 +32,10 @@ jobs:
           context: ./firebase
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/dev-firebase:v1
+
+      - name: Build Android Dev Environment
+        uses: docker/build-push-action@v4
+        with:
+          context: ./android
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/dev-android:v1

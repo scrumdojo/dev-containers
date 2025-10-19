@@ -27,3 +27,13 @@ Available at: `ghcr.io/scrumdojo/dev-firebase:v1`
 - Based on `ghcr.io/scrumdojo/dev-base:v1`
 - Globally installed `firebase-tools` CLI
 - Java JRE to run the Firebase Emulators
+
+## Android Container
+
+Adds JDK 21 LTS and Android SDK to build Android apps. Expexts emulator running on the host machine.
+
+Available at: `ghcr.io/scrumdojo/dev-android:v1`
+
+- Based on `ghcr.io/scrumdojo/dev-base:v1`
+- OpenJDK 21 LTS Headless
+- Android SDK `cmdline-tools` + `platform-tools`
