@@ -14,6 +14,7 @@ RUN apt-get update \
         sudo \
         unzip \
         locales \
+        wget \
         zstd \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
