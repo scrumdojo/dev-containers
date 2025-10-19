@@ -76,3 +76,8 @@ RUN $OMP_THEME
 # Install AI CLI tools script
 ARG AICLI_INSTALL=/home/$USER/ai_cli_install.sh
 COPY --chown=$USER:$USER --chmod=755 sh/ai_cli_install.sh $AICLI_INSTALL
+
+# Entry point script
+COPY --chown=$USER:$USER --chmod=755 sh/entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["/bin/bash"]
